@@ -18,7 +18,7 @@ Deterministic Composer 2 installer for tracked Liberu modules and themes. This p
 | `composer-plugin-api` | `^2.6` |
 
 ```bash
-composer require liberu/composer-installer
+composer require liberusoftware/composer-installer
 ```
 
 ## Public surface
