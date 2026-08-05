@@ -30,7 +30,15 @@ Consumers should depend only on these public types and Composer metadata. Semant
 
 ## Testing
 
-Run the package tests through a compatible host checkout and verify Composer installation on PHP 8.5. Contract packages must remain free of framework, persistence, UI, and provider-SDK concerns; the installer must retain deterministic, traversal-safe install/update/remove behaviour.
+```bash
+composer update
+vendor/bin/pint --test
+vendor/bin/pest
+```
+
+The suite runs standalone — it needs no host checkout, only `composer/composer` as a dev dependency. It covers path computation, the supported package types, name validation, traversal and absolute-path rejection, and collision detection against both the current Composer run and the working tree.
+
+This package gates every install in the fleet, so a regression here breaks every module and theme at once. The installer must retain deterministic, traversal-safe install/update/remove behaviour.
 
 ## Security
 
