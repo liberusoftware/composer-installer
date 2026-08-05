@@ -1,19 +1,35 @@
 {
     "name": "liberusoftware/composer-installer",
     "description": "Deterministic Composer 2 installer for tracked Liberu modules and themes.",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "type": "composer-plugin",
     "license": "MIT",
     "require": {
         "php": "^8.5",
         "composer-plugin-api": "^2.6"
     },
+    "require-dev": {
+        "composer/composer": "^2.6",
+        "laravel/pint": "^1.14",
+        "pestphp/pest": "^5.0"
+    },
     "autoload": {
         "psr-4": {
             "Liberu\\ComposerInstaller\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Liberu\\ComposerInstaller\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "extra": {
-        "class": "Liberu\\ComposerInstaller\\Plugin"
+        "class": "Liberu\\ComposerInstaller\\Plugin",
+        "plugin-modifies-install-path": true
     }
 }
